@@ -7,6 +7,87 @@
     <title>JavaScript Basic</title>
   </head>
   <body>
-    <header>Welcome to JavaScript</header>
+    <header>Let's learn JavaScript</header>
+    <h1 onclick="alert('Hi')">Welcome to JavaScript</h1>
+    <script>
+      //   alert("hi everyone");
+      /*  today
+                      we will talk about
+                      variables
+                      data types
+                      and others*/
+      var firstName = "Adrien";
+      var lastName = "Fernandez";
+      var age = 29;
+      var country = "Finland";
+      //   var fullName = firstName + " " + lastName;
+      console.log(firstName);
+      console.log(lastName);
+      //   console.log(fullName);
+      //   var personInfo = fullName + ".I am " + age + ".I live in " + country;
+      //   USING BACKTICKS FOR MAKING IT "EASIER"
+      //   var personInfo = `I am ${fullName}.I am ${age}.I live in ${country}`;
+      //   console.log(personInfo);
+      var numOne = 10;
+      var numTwo = 20;
+      var sum = numOne % numTwo;
+      console.log(sum);
+      var weather = "sunny";
+      //   JS OPERATORS
+      //   ===, ==, <,>,<=, >=, !=
+
+      // DIFFERENT WAY TO WRTIE IF ELSE USING SWITCH
+      //   if (weather === "rainy")
+      //     console.log("It is raining.You need your raincoat");
+      //   else if (weather === "cloudy")
+      //     console.log("it might be cold, take a jacket");
+      //   else if (weather === "sunny") console.log("bring your sunglasses");
+      //   else console.log("dont you worry, no need for raincoat");
+      switch (weather) {
+        case "rainy":
+          console.log("It is raining.You need your raincoat");
+          break;
+        case "cloudy":
+          console.log("it might be cold, take a jacket");
+          break;
+        case "sunny":
+          console.log("bring your sunglasses");
+          break;
+        default:
+          console.log("dont you worry, no need for raincoat");
+          break;
+      }
+      //   FOR LOOP
+      for (var i = 1; i <= 10; i++) {
+        console.log(`${i}*${i}=${i * i}`);
+      }
+      var i = 0;
+      while (i <= 10) {
+        console.log(i);
+        i++;
+      }
+      var j = 0;
+      do {
+        console.log(`${j}*${j}=${j * j}`);
+        j++;
+      } while (j <= 10);
+
+      //   FUNCTIONS
+      function printFullName(firstName, lastName) {
+        return `${firstName} ${lastName}`;
+      }
+      printFullName("adrien", "fernandez");
+      printFullName("Dean", "Phan");
+
+      function addNumbers(numOne, numTwo) {
+        return numOne + numTwo;
+      }
+      console.log(addNumbers(5, 4));
+
+      function square(number) {
+        return number * number;
+      }
+      console.log(square(10));
+    </script>
   </body>
 </html>
