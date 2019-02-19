@@ -136,13 +136,13 @@ var question8 = "question8";
 console.log(question8);
 
 var age = prompt("enter your age");
-alert(`you are ${age}`);
+console.log(`you are ${age}`);
 if (age < yourAge) {
-  alert(`you are ${yourAge - age} years younger than me`);
-} else alert(`you are ${age - yourAge} years older than me`);
+  console.log(`you are ${yourAge - age} years younger than me`);
+} else console.log(`you are ${age - yourAge} years older than me`);
 if (age >= 18) {
-  alert("your are old enough to drive");
-} else alert(`you are left with ${18 - age} years to drive`);
+  console.log("your are old enough to drive");
+} else console.log(`you are left with ${18 - age} years to drive`);
 
 // QUESTION 9
 
@@ -153,3 +153,71 @@ let a = 4;
 let b = 3;
 
 console.log(a > b ? "a is greater than b" : "b i greater than a");
+
+// QUESTION 10
+
+var question10 = "question10";
+console.log(question10);
+
+var itCompanies = [
+  "Facebook",
+  "Google",
+  "Microsoft",
+  "Apple",
+  "IBM",
+  "Oracle",
+  "Amazon"
+];
+console.log(itCompanies);
+console.log(itCompanies.length);
+for (var i = 0; i < itCompanies.length; i++) {
+  console.log(itCompanies[i]);
+}
+for (var i = 0; i < itCompanies.length; i++) {
+  console.log(itCompanies[i].toUpperCase());
+}
+
+console.log(`${itCompanies} are big IT companies`);
+
+console.log(itCompanies.sort());
+console.log(itCompanies.reverse());
+
+function findCompany(companyName) {
+  return companyName === "apple";
+}
+
+itCompanies.find(findCompany)
+  ? console.log(`${itCompanies.find(findCompany)} exists in the array`)
+  : console.log(
+      `${itCompanies.find(findCompany)} does not exists in the array`
+    );
+
+// ASABENEH METHOD -- 19.2
+
+// var compName;
+
+// function findCompany(companyName) {
+//     var compName = companyName === "Integrify" ? companyName : "Integrify";
+//     console.log(compName);
+//     return companyName === "Integrify";
+// }
+
+// var result = itCompanies.find(findCompany)
+//     ? `${itCompanies.find(findCompany)} exists in the array`
+//     : `${compName} does not exists in the array`;
+// console.log(result);
+
+// QUESTION 11
+
+var question11 = "question11";
+console.log(question11);
+
+var i = 0;
+while (i <= 10) {
+  console.log(i);
+  i++;
+}
+
+for (j = 10; j <= 20; j++) {
+  console.log(j);
+}
