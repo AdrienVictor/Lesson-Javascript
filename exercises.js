@@ -177,7 +177,12 @@ for (var i = 0; i < itCompanies.length; i++) {
   console.log(itCompanies[i].toUpperCase());
 }
 
-console.log(`${itCompanies} are big IT companies`);
+// use itcompanie.slice(itcompanies.length-1)
+console.log(
+  `${itCompanies.slice(itCompanies.length - 1)}  and ${
+    itCompanies[6]
+  } are big IT companies`
+);
 
 console.log(itCompanies.sort());
 console.log(itCompanies.reverse());
@@ -221,3 +226,34 @@ while (i <= 10) {
 for (j = 10; j <= 20; j++) {
   console.log(j);
 }
+
+for (k = 100; k >= 90; k--) {
+  console.log(k);
+}
+var i = 10;
+do {
+  console.log(i);
+  i--;
+} while (i >= 0);
+
+j = 20;
+while (j >= 10) {
+  console.log(j);
+  j--;
+}
+
+var itCompanies = [
+  "Facebook",
+  "Google",
+  "Microsoft",
+  "Apple",
+  "IBM",
+  "Oracle",
+  "Amazon"
+];
+
+for (var i = 0; i < itCompanies.length; i++) {
+  console.log(itCompanies[i]);
+}
+
+console.log(itCompanies.match(/o/gi));
