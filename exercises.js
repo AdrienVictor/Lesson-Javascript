@@ -179,7 +179,7 @@ for (var i = 0; i < itCompanies.length; i++) {
 
 // use itcompanie.slice(itcompanies.length-1)
 console.log(
-  `${itCompanies.slice(itCompanies.length - 1)}  and ${
+  `${itCompanies.slice(0, itCompanies.length - 1)} and ${
     itCompanies[6]
   } are big IT companies`
 );
@@ -188,7 +188,7 @@ console.log(itCompanies.sort());
 console.log(itCompanies.reverse());
 
 function findCompany(companyName) {
-  return companyName === "apple";
+  return companyName === "Apple";
 }
 
 itCompanies.find(findCompany)
@@ -256,4 +256,122 @@ for (var i = 0; i < itCompanies.length; i++) {
   console.log(itCompanies[i]);
 }
 
-console.log(itCompanies.match(/o/gi));
+var companyName = "Oracle";
+i = 0;
+while (i < itCompanies.length && companyName != itCompanies[i]) {
+  i++;
+}
+companyName == itCompanies[i]
+  ? console.log(`${companyName} exists in the array`)
+  : console.log(`${companyName} does not exist in the array`);
+// for (var i = 0; i < itCompanies.length; i++)
+//   companyName === itCompanies[i]
+//     ? console.log(`${companyName} exists in the array`)
+//     : console.log(`${companyName} does not exist in the array`);
+
+// for (var i = 0; i < itCompanies.length; i++) {
+//   if (itCompanies[i].indexOf("oo") != -1) console.log(itCompanies[i]);
+// }
+for (var i = 0; i < itCompanies.length; i++) {
+  itCompanies[i].indexOf("oo") != -1
+    ? console.log(itCompanies[i])
+    : console.log("not found");
+}
+
+// EXERCISES: FUNCTIONS
+
+console.log("exercises:functions");
+// 1
+function fullName() {
+  var fullName = "adrien fernandez";
+  return fullName;
+}
+
+// 2
+function fullName(firstName, lastName) {
+  return `My name is ${firstName} ${lastName}`;
+}
+console.log(fullName("adrien", "fernandez"));
+
+// 3
+function addNumbers(num1, num2) {
+  var sum = num1 + num2;
+  return sum;
+}
+console.log(addNumbers(10, 20));
+
+// 4
+function areaOfRectangle(length, width) {
+  var area = length * width;
+  return area;
+}
+console.log(areaOfRectangle(20, 11));
+
+// 5
+function perimeterOfRectangle(length, width) {
+  var perimeter = 2 * (length + width);
+  return perimeter;
+}
+console.log(perimeterOfRectangle(5, 7));
+
+// 6
+function volumeOfRectPrism(length, width, height) {
+  var volume = length * width * height;
+  return `the volume of your rectangle is ${volume} m3`;
+}
+console.log(volumeOfRectPrism(3, 5, 11));
+
+// 7
+function density(mass, volume) {
+  var density = mass / volume;
+  return density;
+}
+console.log(density(30, 50));
+
+// 8
+function weight(mass, gravity) {
+  var weight = mass * gravity;
+  return weight;
+}
+console.log(weight(30, 9.81));
+
+// 9
+function bmi(weight, height) {
+  var bmi = weight / (height * height);
+  return bmi;
+}
+console.log(bmi(69, 1.77));
+
+// 10
+function solvLinEquation(a, b, y) {
+  var answer = (y - b) / a;
+  return `x= ${answer}`;
+}
+console.log(solvLinEquation(5, 6, 10));
+
+// 11
+function solvQuadEquation(a, b, c) {
+  var delta = b ** 2 - 4 * a * c;
+  if (delta < 0) return "the solution does not exist";
+  else if (delta === 0) {
+    var result = -b / (2 * a);
+    return `the solution is ${result}`;
+  } else {
+    var result1 = (-b + Math.sqrt(delta)) / (2 * a);
+    var result2 = -b - Math.sqrt(delta) / (2 * a);
+    return `there are two solutions: ${result1} and ${result2}`;
+  }
+}
+console.log(solvQuadEquation(3, 40, 5));
+
+// 12
+var array = [2, 5, 34, "hello", 2 + 3 + 4];
+function printArray(array) {
+  for (i = 0; i < array.length; i++) console.log(array[i]);
+}
+printArray(array);
+
+function reverseArray(array) {
+  for (i = array.length - 1; i >= 0; i--) console.log(array[i]);
+}
+reverseArray(array);
