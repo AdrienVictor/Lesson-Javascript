@@ -375,3 +375,151 @@ function reverseArray(array) {
   for (i = array.length - 1; i >= 0; i--) console.log(array[i]);
 }
 reverseArray(array);
+
+// 18
+// function capitalizeArray(arrayToCapitalize) {
+//   var newArray = arrayToCapitalize[0].toUpperCase();
+//   for (i = 1; i < arrayToCapitalize.length; i++) {
+//     var newArray = newArray + " " + arrayToCapitalize[i].toUpperCase();
+//   }
+//   return newArray.split(" ");
+// }
+// console.log(capitalizeArray(itCompanies));
+function capitalizeArray(array) {
+  var array = array.map(function(item) {
+    return item.toUpperCase();
+  });
+  return array;
+}
+console.log(capitalizeArray(itCompanies));
+
+// 19
+function addItem(array, item) {
+  var newArray = array.slice(); //if I need to clone the array before adding a new item
+  newArray.push(item);
+  return newArray;
+}
+console.log(addItem(itCompanies, "Yle"));
+
+// 20
+function removeItem(array, index) {
+  array.splice(index, 1);
+  return array;
+}
+console.log(removeItem(itCompanies, 3));
+
+// 21
+function sumOfNumbers(number) {
+  var sum = 0;
+  for (var i = 0; i < number; i++) {
+    sum = sum + i;
+  }
+  return sum;
+}
+console.log(sumOfNumbers(7));
+
+// 22
+function sumOfOddNumbers(number) {
+  var sum = 0;
+
+  for (var i = 0; i < number; i++) {
+    if (i % 2 != 0) {
+      sum = sum + i;
+    }
+  }
+  return sum;
+}
+console.log(sumOfOddNumbers(7));
+
+// 23
+
+function sumOfEvenNumbers(number) {
+  var sum = 0;
+
+  for (var i = 0; i < number; i++) {
+    if (i % 2 === 0) {
+      sum = sum + i;
+    }
+  }
+  return sum;
+}
+console.log(sumOfEvenNumbers(7));
+
+// 24
+function evenAndOdds(count) {
+  even = 0;
+  odd = 0;
+  for (i = 0; i <= count; i++) i % 2 == 0 ? even++ : odd++;
+
+  return `the number of odds are ${odd}\nthe number of even are ${even}`;
+}
+console.log(evenAndOdds(100));
+
+// 25
+function sumArrayValues(array) {
+  var sum = 0;
+  for (i = 0; i < array.length; i++) {
+    sum = sum + array[i];
+  }
+  return sum;
+}
+console.log(sumArrayValues([1, 2, 3, 4, 5, 10, -2, 3 * 3]));
+
+// 26
+function randomHexaNumberGenerator() {
+  var n = 6,
+    hexColor = "#";
+  while (n--) {
+    hexColor += ((Math.random() * 16) | 0).toString(16); // random char from 0 to f
+  }
+  return hexColor;
+}
+console.log(randomHexaNumberGenerator());
+
+// 27
+function userIdGenerator() {
+  var n = 7;
+  id = "";
+  while (n--) {
+    id += ((Math.random() * 36) | 0).toString(36);
+  }
+  return id;
+}
+console.log(userIdGenerator());
+
+// 28
+// function userIdGeneratedByUser() {
+//   var charNum = prompt("number of characters:");
+//   var idNum = prompt("number of ids:");
+//   let allIds = [];
+
+//   while (idNum > 0) {
+//     var id = "";
+//     for (i = 0; i <= charNum; i++) {
+//       id += ((Math.random() * 36) | 0).toString(36);
+//     }
+//     allIds[idNum - 1] = id;
+//     id = "";
+//     idNum--;
+//   }
+//   return allIds.join(",");
+// }
+// console.log(userIdGeneratedByUser());
+
+function userIdGeneratedByUser() {
+  var charNum = prompt("number of characters:");
+  var idNum = prompt("number of ids:");
+  let allIds = [];
+  var id = "";
+
+  while (idNum > 0) {
+    for (i = 0; i <= charNum; i++) {
+      id += ((Math.random() * 36) | 0).toString(36);
+    }
+    allIds[idNum - 1] = id;
+    id = "";
+    idNum--;
+  }
+  return allIds.join(",");
+}
+console.log(userIdGeneratedByUser());
