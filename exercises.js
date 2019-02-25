@@ -523,3 +523,78 @@ function userIdGeneratedByUser() {
   return allIds.join(",");
 }
 console.log(userIdGeneratedByUser());
+
+// 30
+
+function rgbColorGenerator() {
+  var r = Math.floor(Math.random() * 255) || Math.ceil(Math.random() * 255);
+  var g = Math.floor(Math.random() * 255) || Math.ceil(Math.random() * 255);
+  var b = Math.floor(Math.random() * 255) || Math.ceil(Math.random() * 255);
+
+  return `rgb(${r},${g},${b})`;
+}
+
+console.log(rgbColorGenerator());
+
+// 31
+
+var date = new Date();
+console.log(date);
+
+// 32
+
+function displayDateTime() {
+  var date = new Date();
+  var day = date.getDate();
+  var month = date.getMonth() + 1;
+  var year = date.getFullYear();
+  var hour = date.getHours() + 1;
+  var minutes = date.getMinutes() + 1;
+
+  return `${day}/${month}/${year} ${hour}:${minutes}`;
+}
+console.log(displayDateTime());
+
+// 33
+
+function shuffleArray(array) {
+  let i = array.length;
+  while (i--) {
+    let index = Math.floor(Math.random() * i);
+    let temp = array[i];
+    array[i] = array[index];
+    array[index] = temp;
+  }
+  return array;
+}
+console.log(shuffleArray(itCompanies));
+
+// 34
+
+// var result = 75; check later for previous question 'conditon q5'
+
+// switch (true) {
+//   case result >= 70 && result <= 80:
+//     console.log("good grade");
+//     break;
+//   default:
+//     console.log("bad grade");
+//     break;
+// }
+
+function factorial(number) {
+  if (number === 0) {
+    return 1;
+  } else if (number < 0) return "enter a positive number";
+  else return number * factorial(number - 1);
+}
+console.log(factorial(6));
+// this is a recusive function: check https://codeburst.io/learn-and-understand-recursion-in-javascript-b588218e87ea
+
+// 35
+
+function isEmpty(parameter) {
+  if (parameter === undefined) return "your parameter is empty";
+  else return parameter;
+}
+console.log(isEmpty());
