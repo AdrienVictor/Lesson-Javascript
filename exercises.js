@@ -159,7 +159,7 @@ console.log(a > b ? "a is greater than b" : "b i greater than a");
 var question10 = "question10";
 console.log(question10);
 
-var itCompanies = [
+let itCompanies = [
   "Facebook",
   "Google",
   "Microsoft",
@@ -242,21 +242,21 @@ while (j >= 10) {
   j--;
 }
 
-var itCompanies = [
-  "Facebook",
-  "Google",
-  "Microsoft",
-  "Apple",
-  "IBM",
-  "Oracle",
-  "Amazon"
-];
+// var itCompanies = [
+//   "Facebook",
+//   "Google",
+//   "Microsoft",
+//   "Apple",
+//   "IBM",
+//   "Oracle",
+//   "Amazon"
+// ];
 
-for (var i = 0; i < itCompanies.length; i++) {
+for (let i = 0; i < itCompanies.length; i++) {
   console.log(itCompanies[i]);
 }
 
-var companyName = "Oracle";
+let companyName = "Oracle";
 i = 0;
 while (i < itCompanies.length && companyName != itCompanies[i]) {
   i++;
@@ -272,7 +272,7 @@ companyName == itCompanies[i]
 // for (var i = 0; i < itCompanies.length; i++) {
 //   if (itCompanies[i].indexOf("oo") != -1) console.log(itCompanies[i]);
 // }
-for (var i = 0; i < itCompanies.length; i++) {
+for (let i = 0; i < itCompanies.length; i++) {
   itCompanies[i].indexOf("oo") != -1
     ? console.log(itCompanies[i])
     : console.log("not found");
@@ -283,7 +283,7 @@ for (var i = 0; i < itCompanies.length; i++) {
 console.log("exercises:functions");
 // 1
 function fullName() {
-  var fullName = "adrien fernandez";
+  let fullName = "adrien fernandez";
   return fullName;
 }
 
@@ -295,86 +295,86 @@ console.log(fullName("adrien", "fernandez"));
 
 // 3
 function addNumbers(num1, num2) {
-  var sum = num1 + num2;
+  let sum = num1 + num2;
   return sum;
 }
 console.log(addNumbers(10, 20));
 
 // 4
 function areaOfRectangle(length, width) {
-  var area = length * width;
+  let area = length * width;
   return area;
 }
 console.log(areaOfRectangle(20, 11));
 
 // 5
 function perimeterOfRectangle(length, width) {
-  var perimeter = 2 * (length + width);
+  let perimeter = 2 * (length + width);
   return perimeter;
 }
 console.log(perimeterOfRectangle(5, 7));
 
 // 6
 function volumeOfRectPrism(length, width, height) {
-  var volume = length * width * height;
+  let volume = length * width * height;
   return `the volume of your rectangle is ${volume} m3`;
 }
 console.log(volumeOfRectPrism(3, 5, 11));
 
 // 7
 function density(mass, volume) {
-  var density = mass / volume;
+  let density = mass / volume;
   return density;
 }
 console.log(density(30, 50));
 
 // 8
 function weight(mass, gravity) {
-  var weight = mass * gravity;
+  let weight = mass * gravity;
   return weight;
 }
 console.log(weight(30, 9.81));
 
 // 9
 function bmi(weight, height) {
-  var bmi = weight / (height * height);
+  let bmi = weight / (height * height);
   return bmi;
 }
 console.log(bmi(69, 1.77));
 
 // 10
 function solvLinEquation(a, b, y) {
-  var answer = (y - b) / a;
+  let answer = (y - b) / a;
   return `x= ${answer}`;
 }
 console.log(solvLinEquation(5, 6, 10));
 
 // 11
 function solvQuadEquation(a, b, c) {
-  var delta = b ** 2 - 4 * a * c;
+  let delta = b ** 2 - 4 * a * c;
   if (delta < 0) return "the solution does not exist";
   else if (delta === 0) {
-    var result = -b / (2 * a);
+    let result = -b / (2 * a);
     return `the solution is ${result}`;
   } else {
-    var result1 = (-b + Math.sqrt(delta)) / (2 * a);
-    var result2 = -b - Math.sqrt(delta) / (2 * a);
+    let result1 = (-b + Math.sqrt(delta)) / (2 * a);
+    let result2 = -b - Math.sqrt(delta) / (2 * a);
     return `there are two solutions: ${result1} and ${result2}`;
   }
 }
 console.log(solvQuadEquation(3, 40, 5));
 
 // 12
-var array = [2, 5, 34, "hello", 2 + 3 + 4];
+let arrayTestOne = [2, 5, 34, "hello", 2 + 3 + 4];
 function printArray(array) {
   for (i = 0; i < array.length; i++) console.log(array[i]);
 }
-printArray(array);
+printArray(arrayTestOne);
 
 function reverseArray(array) {
   for (i = array.length - 1; i >= 0; i--) console.log(array[i]);
 }
-reverseArray(array);
+reverseArray(arrayTestOne);
 
 // 18
 // function capitalizeArray(arrayToCapitalize) {
@@ -386,7 +386,7 @@ reverseArray(array);
 // }
 // console.log(capitalizeArray(itCompanies));
 function capitalizeArray(array) {
-  var array = array.map(function(item) {
+  array = array.map(function(item) {
     return item.toUpperCase();
   });
   return array;
@@ -395,7 +395,7 @@ console.log(capitalizeArray(itCompanies));
 
 // 19
 function addItem(array, item) {
-  var newArray = array.slice(); //if I need to clone the array before adding a new item
+  let newArray = array.slice(); //if I need to clone the array before adding a new item
   newArray.push(item);
   return newArray;
 }
@@ -410,8 +410,8 @@ console.log(removeItem(itCompanies, 3));
 
 // 21
 function sumOfNumbers(number) {
-  var sum = 0;
-  for (var i = 0; i < number; i++) {
+  let sum = 0;
+  for (let i = 0; i < number; i++) {
     sum = sum + i;
   }
   return sum;
@@ -420,9 +420,9 @@ console.log(sumOfNumbers(7));
 
 // 22
 function sumOfOddNumbers(number) {
-  var sum = 0;
+  let sum = 0;
 
-  for (var i = 0; i < number; i++) {
+  for (let i = 0; i < number; i++) {
     if (i % 2 != 0) {
       sum = sum + i;
     }
@@ -436,7 +436,7 @@ console.log(sumOfOddNumbers(7));
 function sumOfEvenNumbers(number) {
   var sum = 0;
 
-  for (var i = 0; i < number; i++) {
+  for (let i = 0; i < number; i++) {
     if (i % 2 === 0) {
       sum = sum + i;
     }
@@ -457,7 +457,7 @@ console.log(evenAndOdds(100));
 
 // 25
 function sumArrayValues(array) {
-  var sum = 0;
+  let sum = 0;
   for (i = 0; i < array.length; i++) {
     sum = sum + array[i];
   }
@@ -467,7 +467,7 @@ console.log(sumArrayValues([1, 2, 3, 4, 5, 10, -2, 3 * 3]));
 
 // 26
 function randomHexaNumberGenerator() {
-  var n = 6,
+  let n = 6,
     hexColor = "#";
   while (n--) {
     hexColor += ((Math.random() * 16) | 0).toString(16); // random char from 0 to f
@@ -478,7 +478,7 @@ console.log(randomHexaNumberGenerator());
 
 // 27
 function userIdGenerator() {
-  var n = 7;
+  let n = 7;
   id = "";
   while (n--) {
     id += ((Math.random() * 36) | 0).toString(36);
@@ -507,10 +507,10 @@ console.log(userIdGenerator());
 // console.log(userIdGeneratedByUser());
 
 function userIdGeneratedByUser() {
-  var charNum = prompt("number of characters:");
-  var idNum = prompt("number of ids:");
+  let charNum = prompt("number of characters:");
+  let idNum = prompt("number of ids:");
   let allIds = [];
-  var id = "";
+  let id = "";
 
   while (idNum > 0) {
     for (i = 0; i <= charNum; i++) {
@@ -527,9 +527,9 @@ console.log(userIdGeneratedByUser());
 // 30
 
 function rgbColorGenerator() {
-  var r = Math.floor(Math.random() * 255) || Math.ceil(Math.random() * 255);
-  var g = Math.floor(Math.random() * 255) || Math.ceil(Math.random() * 255);
-  var b = Math.floor(Math.random() * 255) || Math.ceil(Math.random() * 255);
+  let r = Math.floor(Math.random() * 255) || Math.ceil(Math.random() * 255);
+  let g = Math.floor(Math.random() * 255) || Math.ceil(Math.random() * 255);
+  let b = Math.floor(Math.random() * 255) || Math.ceil(Math.random() * 255);
 
   return `rgb(${r},${g},${b})`;
 }
@@ -538,18 +538,18 @@ console.log(rgbColorGenerator());
 
 // 31
 
-var date = new Date();
+let date = new Date();
 console.log(date);
 
 // 32
 
 function displayDateTime() {
-  var date = new Date();
-  var day = date.getDate();
-  var month = date.getMonth() + 1;
-  var year = date.getFullYear();
-  var hour = date.getHours() + 1;
-  var minutes = date.getMinutes() + 1;
+  let date = new Date();
+  let day = date.getDate();
+  let month = date.getMonth() + 1;
+  let year = date.getFullYear();
+  let hour = date.getHours();
+  let minutes = date.getMinutes();
 
   return `${day}/${month}/${year} ${hour}:${minutes}`;
 }
@@ -598,3 +598,95 @@ function isEmpty(parameter) {
   else return parameter;
 }
 console.log(isEmpty());
+
+// 36
+
+function sum() {
+  let sum = 0;
+  for (var i = 0; i < arguments.length; i++) {
+    sum += arguments[i];
+  }
+  // let sum = arguments.reduce(function(accumulator, currentValue) {
+  //   return accumulator + currentValue;
+  // }, 0);
+  return sum;
+}
+console.log(sum(3, 4, 4, 4, 4, 10, 100));
+
+// 37
+
+function sumOfArrayItems(array) {
+  let sum = array.reduce(function(accumulator, currentValue) {
+    return accumulator + currentValue;
+  }, 0);
+  let i = array.length;
+  while (i--)
+    if (typeof array[i] === "string")
+      return "your array must only contain numbers";
+    else return sum;
+}
+console.log(sumOfArrayItems([3, 5, 6, 4 * 6, 10 / 2, "hello"]));
+
+// 38
+
+function average(array) {
+  let sum =
+    array.reduce(function(accumulator, currentValue) {
+      return accumulator + currentValue;
+    }, 0) / array.length;
+  let i = array.length;
+  while (i--)
+    if (typeof array[i] === "string")
+      return "your array must only contain numbers";
+    else return `the avarage of your array is ${sum}`;
+}
+console.log(average([19, 34, 10 + 3, 9 * 3, 23 / 4]));
+
+// 39
+let testArray = ["lemon", "carrot", "apple", "mango", "banana"];
+function modifyArray(array) {
+  array[4] = array[4].toUpperCase();
+  let i = array.length;
+  // while (i--)
+  if (i < 4) return "item not found";
+  else return array;
+}
+console.log(modifyArray(itCompanies));
+
+// OBJECTS EXERCISES
+
+console.log("objects exercises:");
+
+// 1
+
+let personAccount = {
+  firstName: "adrien",
+  lastName: "fernandez",
+  incomes: { rent: 600, transport: 50, food: 120 },
+  expenses: [800, 900, 1300, 650],
+  totalIncome: function() {
+    let sum = this.incomes.reduce(function(accumulator, currentValue) {
+      return accumulator + currentValue;
+    }, 0);
+    return sum;
+  },
+  totalExpenses: function() {
+    let sum = this.expenses.reduce(function(accumulator, currentValue) {
+      return accumulator + currentValue;
+    }, 0);
+    return sum;
+  },
+  accountInfo: () => `${this.firstName} ${this.lastName}`,
+  // addIncome: function() {
+  //   this.incomes = this.incomes.push();
+  // }
+  // addExpenses: expenses.push(),
+  accountBalance: function() {
+    this.totalIncome - this.totalExpenses;
+  }
+};
+
+console.log(personAccount);
+console.log(personAccount.totalExpenses());
+console.log(personAccount.totalIncome());
+console.log(personAccount.accountBalance());
