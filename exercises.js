@@ -653,6 +653,18 @@ function modifyArray(array) {
 }
 console.log(modifyArray(itCompanies));
 
+// 41
+
+function sevenRandomNumbers() {
+  let arr = [];
+  while (arr.length < 7) {
+    var r = Math.floor(Math.random() * 10);
+    if (arr.indexOf(r) === -1) arr.push(r);
+  }
+  return arr;
+}
+console.log(sevenRandomNumbers());
+
 // OBJECTS EXERCISES
 
 console.log("objects exercises:");
@@ -662,31 +674,93 @@ console.log("objects exercises:");
 let personAccount = {
   firstName: "adrien",
   lastName: "fernandez",
-  incomes: { rent: 600, transport: 50, food: 120 },
-  expenses: [800, 900, 1300, 650],
-  totalIncome: function() {
-    let sum = this.incomes.reduce(function(accumulator, currentValue) {
-      return accumulator + currentValue;
+  incomes: { kela: 580, work: 350, france: 490 },
+  expenses: { rent: 600, transport: 50, food: 120 },
+  // totalIncomes: function(incomes) {
+  //   var sum = 0;
+  //   for (var i in this.incomes) {
+  //     if (this.incomes.hasOwnProperty(i)) {
+  //       sum += parseFloat(this.incomes[i]);
+  //     }
+  //   }
+  //   return sum;
+  // },THIS IS THE OLD WAY OF DOING THINGS
+  // totalIncomes: function() {
+  //   return Object.values(this.incomes).reduce((total, num) => total + num);
+  // }, arrow version
+  totalIncomes: function() {
+    return Object.values(this.incomes).reduce(function(sum, current) {
+      return sum + current;
     }, 0);
-    return sum;
-  },
+  }, // THIS IS THE NEW AND EASIER WAY OF DOING THINGS
   totalExpenses: function() {
-    let sum = this.expenses.reduce(function(accumulator, currentValue) {
-      return accumulator + currentValue;
+    return Object.values(this.expenses).reduce(function(sum, current) {
+      return sum + current;
     }, 0);
-    return sum;
   },
   accountInfo: () => `${this.firstName} ${this.lastName}`,
-  // addIncome: function() {
-  //   this.incomes = this.incomes.push();
-  // }
-  // addExpenses: expenses.push(),
+  addIncome: function(nameIncome, numIncome) {
+    return (this.incomes[nameIncome] = numIncome);
+  },
+  addExpense: function(nameExpense, numExpense) {
+    return (this.expenses[nameExpense] = numExpense);
+  },
   accountBalance: function() {
-    this.totalIncome - this.totalExpenses;
+    return this.totalIncomes() - this.totalExpenses();
   }
 };
 
 console.log(personAccount);
-console.log(personAccount.totalExpenses());
-console.log(personAccount.totalIncome());
-console.log(personAccount.accountBalance());
+console.log("your incomes", personAccount.totalIncomes());
+console.log("your expenses", personAccount.totalExpenses());
+console.log("your account balance", personAccount.accountBalance());
+console.log("new income", personAccount.addIncome("other", 400));
+console.log("updated incomes", personAccount.totalIncomes());
+console.log("new expense", personAccount.addExpense("other", 200));
+
+console.log("personAccountV2");
+
+let personAccountTwo = {
+  firstName: "adrien",
+  lastName: "fernandez",
+  incomes: [{ kela: 580 }, { work: 350 }, { france: 490 }],
+  expenses: [{ rent: 600 }, { transport: 50 }, { food: 120 }],
+  totalIncomes: function() {
+    let total = 0;
+    for (let i = 0; i < this.incomes.length; i++) {
+      total += Object.values(this.incomes[i])[0];
+    }
+    return total;
+  },
+  totalExpenses: function() {
+    let total = 0;
+    for (let i = 0; i < this.expenses.length; i++) {
+      total += Object.values(this.expenses[i])[0];
+    }
+    return total;
+  },
+  accountBalance: function() {
+    return this.totalIncomes() - this.totalExpenses();
+  },
+  addIncome: function(nameIncome, numIncome) {
+    let newIncome = {};
+    newIncome[nameIncome] = numIncome;
+    this.incomes.push(newIncome);
+    return "add income: " + nameIncome + " " + numIncome;
+  },
+  addExpense: function(nameExpense, numExpense) {
+    let newExpense = {};
+    newExpense[nameExpense] = numExpense;
+    this.expenses.push(newExpense);
+    return "add income: " + nameExpense + " " + numExpense;
+  }
+};
+
+console.log(personAccountTwo);
+console.log(personAccountTwo.totalIncomes());
+console.log(personAccountTwo.totalExpenses());
+console.log(personAccountTwo.accountBalance());
+console.log(personAccountTwo.addIncome("other", 200));
+console.log(personAccountTwo.addIncome("extra", 100));
+console.log(personAccountTwo.addExpense("other", 150));
+console.log(personAccountTwo.totalExpenses());
