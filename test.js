@@ -46,13 +46,14 @@ let itCompanies = [
   "Amazon"
 ];
 
-function removeMiddleAddNew(array) {
-  if (array.length % 2 != 0) array.splice(Math.floor(array.length / 2), 1);
-  else array.splice(Math.floor(array.length / 2), 2);
+function removeMiddleAddNew(array, newOne, newTwo) {
+  if (array.length % 2 != 0)
+    array.splice(Math.floor(array.length / 2), 1, newOne);
+  else array.splice(Math.floor(array.length / 2), 2, newOne, newTwo);
 
   return array;
 }
-console.log(removeMiddleAddNew(itCompanies));
+console.log(removeMiddleAddNew(itCompanies, "Integrify", "Smartly"));
 
 // question5
 function averageAge(array) {
@@ -88,8 +89,14 @@ console.log(genCarPlateNum());
 
 // question7
 
-function genSocialSecurityNum() {}
+function genSocialSecurityNum() {
+  let day = Math.ceil(Math.random() * 31);
+  let month = Math.ceil(Math.random() * 12);
+  let year = Math.floor(Math.random() * 100);
 
+  return day;
+}
+console.log(genSocialSecurityNum());
 // question8
 
 const shoppingCart = ["Milk", "Coffee", "Tea", "Honey"];
@@ -130,3 +137,99 @@ function checkUniqueItem(array) {
 }
 console.log(checkUniqueItem(arrOne));
 console.log(checkUniqueItem(arrTwo));
+
+// question 11
+
+const users = [
+  {
+    name: "Brook",
+    scores: 75,
+    skills: ["HTM", "CSS", "JS"],
+    age: 16
+  },
+  {
+    name: "Alex",
+    scores: 80,
+    skills: ["HTM", "CSS", "JS"],
+    age: 18
+  },
+  {
+    name: "David",
+    scores: 75,
+    skills: ["HTM", "CSS"],
+    age: 22
+  },
+  {
+    name: "John",
+    scores: 85,
+    skills: ["HTM"],
+    age: 25
+  },
+  {
+    name: "Sara",
+    scores: 95,
+    skills: ["HTM", "CSS", "JS"],
+    age: 26
+  },
+  {
+    name: "Martha",
+    scores: 80,
+    skills: ["HTM", "CSS", "JS"],
+    age: 18
+  },
+  {
+    name: "Thomas",
+    scores: 90,
+    skills: ["HTM", "CSS", "JS"],
+    age: 20
+  }
+];
+
+function scoresGreaterThan85(array) {
+  // return users.filter(userItem => userItem.scores > 85);
+  let newArray = [];
+  for (i = 0; i < array.length; i++)
+    if (users[i].scores > 85) newArray.push(users[i]);
+  return newArray;
+}
+console.log(scoresGreaterThan85(users));
+
+function addUser(newUser) {
+  let checkUser = users.filter(oldUser => oldUser.name === newUser.name);
+  if (checkUser.length === 0) users.push(newUser);
+  return newUser;
+}
+console.log(
+  addUser({
+    name: "Adrien",
+    scores: 80,
+    skills: ["HTM", "CSS", "JS"],
+    age: 29
+  })
+);
+
+console.log(users);
+
+function addUserSkill(userName, newSkill) {
+  let checkUser = users.filter(oldUser => oldUser.name === userName);
+  if (checkUser.length > 0) checkUser[0].skills.push(newSkill);
+  return `${userName} learned ${newSkill}`;
+}
+console.log(addUserSkill("Thomas", "React"));
+
+function editUser(userName, newUserData) {
+  let checkUser = users.filter(oldUser => oldUser.name === userName);
+  if (checkUser.length > 0) {
+    users.splice(users.indexOf(checkUser[0]), 1);
+    users.push(newUserData);
+  }
+}
+console.log(
+  editUser("Adrien", {
+    name: "Adrian",
+    scores: 80,
+    skills: ["HTM", "CSS", "JS"],
+    age: 29
+  })
+);
+console.log(users);
