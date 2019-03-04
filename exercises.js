@@ -520,7 +520,7 @@ function userIdGeneratedByUser() {
     id = "";
     idNum--;
   }
-  return allIds.join(",");
+  return allIds;
 }
 console.log(userIdGeneratedByUser());
 
@@ -653,7 +653,17 @@ function modifyArray(array) {
 }
 console.log(modifyArray(itCompanies));
 
-// 41
+// 45
+let arrayTestUnique = ["hello", "hi", "bonjour", "hi", "hi"];
+function checkUniqueItem(array) {
+  for (i = 0; i < array.length; i++)
+    if (array.includes(array[i], i + 1))
+      return `array contains duplicates: ${array[i]}`;
+  return "no duplicates to be found";
+}
+console.log(checkUniqueItem(arrayTestUnique));
+
+// 47
 
 function sevenRandomNumbers() {
   let arr = [];
