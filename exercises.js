@@ -791,3 +791,11 @@ const sixCharCountries = countries.filter(country => {
   if (country.length == 6) return country;
 });
 console.log(sixCharCountries);
+
+const points = [1, 2, 3, 4, 5, 6];
+
+const value = points.forEach(
+  points.find(num => {
+    return num > 2;
+  })
+);
