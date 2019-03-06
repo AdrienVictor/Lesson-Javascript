@@ -1,8 +1,8 @@
 // QUESTION 1
 
-var firstName = "adrien";
-var lastName = "fernandez";
-var maritalStatus = "avomies";
+var firstName = 'adrien';
+var lastName = 'fernandez';
+var maritalStatus = 'avomies';
 console.log(firstName);
 var personalInfo = `${firstName} ${lastName} ${maritalStatus}`;
 console.log(personalInfo);
@@ -21,34 +21,34 @@ console.log(typeof yourAge);
 
 // QUESTION 3
 
-var company = "Integrify Academy";
+var company = 'Integrify Academy';
 console.log(company);
 console.log(company.length);
 console.log(company.toUpperCase());
 console.log(company.toLowerCase());
 console.log(company.substr(0, 9));
-console.log(company.includes("Academy"));
-console.log(company.split(""));
-console.log(company.split(" "));
-var company = "Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon";
-console.log(company.split(","));
-var company = "Integrify Academy";
-console.log(company.replace("Integrify", "Microsoft"));
-var company = "Integrify Academy";
+console.log(company.includes('Academy'));
+console.log(company.split(''));
+console.log(company.split(' '));
+var company = 'Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon';
+console.log(company.split(','));
+var company = 'Integrify Academy';
+console.log(company.replace('Integrify', 'Microsoft'));
+var company = 'Integrify Academy';
 console.log(company.charAt(10));
 console.log(company.charCodeAt(10));
-console.log(company.indexOf("e"));
-console.log(company.lastIndexOf("e"));
-var company = " Integrify Academy ";
+console.log(company.indexOf('e'));
+console.log(company.lastIndexOf('e'));
+var company = ' Integrify Academy ';
 console.log(company.trim());
-var company = "Integrify Academy";
-console.log(company.startsWith("I"));
-console.log(company.endsWith("y"));
+var company = 'Integrify Academy';
+console.log(company.startsWith('I'));
+console.log(company.endsWith('y'));
 console.log(company.match(/a/gi));
-var integrify = "Integrify";
-var academy = "Academy";
-console.log(integrify.concat(" " + academy));
-console.log((company + " ").repeat(5));
+var integrify = 'Integrify';
+var academy = 'Academy';
+console.log(integrify.concat(' ' + academy));
+console.log((company + ' ').repeat(5));
 
 // QUESTION 4
 
@@ -92,9 +92,9 @@ var b5 = Boolean(4 == 4);
 var b6 = Boolean(4 === 4);
 var b7 = Boolean(4 != 4);
 var b8 = Boolean(4 !== 4);
-var b9 = Boolean(4 != "4");
-var b10 = Boolean(4 == "4");
-var b11 = Boolean(4 === "4");
+var b9 = Boolean(4 != '4');
+var b10 = Boolean(4 == '4');
+var b11 = Boolean(4 === '4');
 console.log(b1);
 console.log(b2);
 console.log(b3);
@@ -108,7 +108,7 @@ console.log(b10);
 console.log(b11);
 
 // QUESTION 7
-var question7 = "question7";
+var question7 = 'question7';
 console.log(question7);
 var b1 = Boolean(4 > 3 && 10 < 12);
 console.log(b1);
@@ -128,45 +128,45 @@ var b8 = Boolean(!(4 > 3 && 10 < 12));
 console.log(b8);
 var b9 = Boolean(!(4 > 3 && 10 > 12));
 console.log(b9);
-var b10 = Boolean(!(4 === "4"));
+var b10 = Boolean(!(4 === '4'));
 console.log(b10);
 
 // QUESTION 8
-var question8 = "question8";
+var question8 = 'question8';
 console.log(question8);
 
-var age = prompt("enter your age");
-console.log(`you are ${age}`);
-if (age < yourAge) {
-  console.log(`you are ${yourAge - age} years younger than me`);
-} else console.log(`you are ${age - yourAge} years older than me`);
-if (age >= 18) {
-  console.log("your are old enough to drive");
-} else console.log(`you are left with ${18 - age} years to drive`);
+// var age = prompt("enter your age");
+// console.log(`you are ${age}`);
+// if (age < yourAge) {
+//   console.log(`you are ${yourAge - age} years younger than me`);
+// } else console.log(`you are ${age - yourAge} years older than me`);
+// if (age >= 18) {
+//   console.log("your are old enough to drive");
+// } else console.log(`you are left with ${18 - age} years to drive`);
 
 // QUESTION 9
 
-var question9 = "question9";
+var question9 = 'question9';
 console.log(question9);
 
 let a = 4;
 let b = 3;
 
-console.log(a > b ? "a is greater than b" : "b i greater than a");
+console.log(a > b ? 'a is greater than b' : 'b i greater than a');
 
 // QUESTION 10
 
-var question10 = "question10";
+var question10 = 'question10';
 console.log(question10);
 
 let itCompanies = [
-  "Facebook",
-  "Google",
-  "Microsoft",
-  "Apple",
-  "IBM",
-  "Oracle",
-  "Amazon"
+  'Facebook',
+  'Google',
+  'Microsoft',
+  'Apple',
+  'IBM',
+  'Oracle',
+  'Amazon'
 ];
 console.log(itCompanies);
 console.log(itCompanies.length);
@@ -188,7 +188,7 @@ console.log(itCompanies.sort());
 console.log(itCompanies.reverse());
 
 function findCompany(companyName) {
-  return companyName === "Apple";
+  return companyName === 'Apple';
 }
 
 itCompanies.find(findCompany)
@@ -214,7 +214,7 @@ itCompanies.find(findCompany)
 
 // QUESTION 11
 
-var question11 = "question11";
+var question11 = 'question11';
 console.log(question11);
 
 var i = 0;
@@ -256,7 +256,7 @@ for (let i = 0; i < itCompanies.length; i++) {
   console.log(itCompanies[i]);
 }
 
-let companyName = "Oracle";
+let companyName = 'Oracle';
 i = 0;
 while (i < itCompanies.length && companyName != itCompanies[i]) {
   i++;
@@ -273,17 +273,17 @@ companyName == itCompanies[i]
 //   if (itCompanies[i].indexOf("oo") != -1) console.log(itCompanies[i]);
 // }
 for (let i = 0; i < itCompanies.length; i++) {
-  itCompanies[i].indexOf("oo") != -1
+  itCompanies[i].indexOf('oo') != -1
     ? console.log(itCompanies[i])
-    : console.log("not found");
+    : console.log('not found');
 }
 
 // EXERCISES: FUNCTIONS
 
-console.log("exercises:functions");
+console.log('exercises:functions');
 // 1
 function fullName() {
-  let fullName = "adrien fernandez";
+  let fullName = 'adrien fernandez';
   return fullName;
 }
 
@@ -291,7 +291,7 @@ function fullName() {
 function fullName(firstName, lastName) {
   return `My name is ${firstName} ${lastName}`;
 }
-console.log(fullName("adrien", "fernandez"));
+console.log(fullName('adrien', 'fernandez'));
 
 // 3
 function addNumbers(num1, num2) {
@@ -352,7 +352,7 @@ console.log(solvLinEquation(5, 6, 10));
 // 11
 function solvQuadEquation(a, b, c) {
   let delta = b ** 2 - 4 * a * c;
-  if (delta < 0) return "the solution does not exist";
+  if (delta < 0) return 'the solution does not exist';
   else if (delta === 0) {
     let result = -b / (2 * a);
     return `the solution is ${result}`;
@@ -365,7 +365,7 @@ function solvQuadEquation(a, b, c) {
 console.log(solvQuadEquation(3, 40, 5));
 
 // 12
-let arrayTestOne = [2, 5, 34, "hello", 2 + 3 + 4];
+let arrayTestOne = [2, 5, 34, 'hello', 2 + 3 + 4];
 function printArray(array) {
   for (i = 0; i < array.length; i++) console.log(array[i]);
 }
@@ -399,7 +399,7 @@ function addItem(array, item) {
   newArray.push(item);
   return newArray;
 }
-console.log(addItem(itCompanies, "Yle"));
+console.log(addItem(itCompanies, 'Yle'));
 
 // 20
 function removeItem(array, index) {
@@ -468,7 +468,7 @@ console.log(sumArrayValues([1, 2, 3, 4, 5, 10, -2, 3 * 3]));
 // 26
 function randomHexaNumberGenerator() {
   let n = 6,
-    hexColor = "#";
+    hexColor = '#';
   while (n--) {
     hexColor += ((Math.random() * 16) | 0).toString(16); // random char from 0 to f
   }
@@ -479,7 +479,7 @@ console.log(randomHexaNumberGenerator());
 // 27
 function userIdGenerator() {
   let n = 7;
-  id = "";
+  id = '';
   while (n--) {
     id += ((Math.random() * 36) | 0).toString(36);
   }
@@ -506,23 +506,23 @@ console.log(userIdGenerator());
 // }
 // console.log(userIdGeneratedByUser());
 
-function userIdGeneratedByUser() {
-  let charNum = prompt("number of characters:");
-  let idNum = prompt("number of ids:");
-  let allIds = [];
-  let id = "";
+// function userIdGeneratedByUser() {
+//   let charNum = prompt("number of characters:");
+//   let idNum = prompt("number of ids:");
+//   let allIds = [];
+//   let id = "";
 
-  while (idNum > 0) {
-    for (i = 0; i <= charNum; i++) {
-      id += ((Math.random() * 36) | 0).toString(36);
-    }
-    allIds[idNum - 1] = id;
-    id = "";
-    idNum--;
-  }
-  return allIds;
-}
-console.log(userIdGeneratedByUser());
+//   while (idNum > 0) {
+//     for (i = 0; i <= charNum; i++) {
+//       id += ((Math.random() * 36) | 0).toString(36);
+//     }
+//     allIds[idNum - 1] = id;
+//     id = "";
+//     idNum--;
+//   }
+//   return allIds;
+// }
+// console.log(userIdGeneratedByUser());
 
 // 30
 
@@ -585,7 +585,7 @@ console.log(shuffleArray(itCompanies));
 function factorial(number) {
   if (number === 0) {
     return 1;
-  } else if (number < 0) return "enter a positive number";
+  } else if (number < 0) return 'enter a positive number';
   else return number * factorial(number - 1);
 }
 console.log(factorial(6));
@@ -594,7 +594,7 @@ console.log(factorial(6));
 // 35
 
 function isEmpty(parameter) {
-  if (parameter === undefined) return "your parameter is empty";
+  if (parameter === undefined) return 'your parameter is empty';
   else return parameter;
 }
 console.log(isEmpty());
@@ -621,11 +621,11 @@ function sumOfArrayItems(array) {
   }, 0);
   let i = array.length;
   while (i--)
-    if (typeof array[i] === "string")
-      return "your array must only contain numbers";
+    if (typeof array[i] === 'string')
+      return 'your array must only contain numbers';
     else return sum;
 }
-console.log(sumOfArrayItems([3, 5, 6, 4 * 6, 10 / 2, "hello"]));
+console.log(sumOfArrayItems([3, 5, 6, 4 * 6, 10 / 2, 'hello']));
 
 // 38
 
@@ -636,30 +636,30 @@ function average(array) {
     }, 0) / array.length;
   let i = array.length;
   while (i--)
-    if (typeof array[i] === "string")
-      return "your array must only contain numbers";
+    if (typeof array[i] === 'string')
+      return 'your array must only contain numbers';
     else return `the avarage of your array is ${sum}`;
 }
 console.log(average([19, 34, 10 + 3, 9 * 3, 23 / 4]));
 
 // 39
-let testArray = ["lemon", "carrot", "apple", "mango", "banana"];
+let testArray = ['lemon', 'carrot', 'apple', 'mango', 'banana'];
 function modifyArray(array) {
   array[4] = array[4].toUpperCase();
   let i = array.length;
   // while (i--)
-  if (i < 4) return "item not found";
+  if (i < 4) return 'item not found';
   else return array;
 }
 console.log(modifyArray(itCompanies));
 
 // 45
-let arrayTestUnique = ["hello", "hi", "bonjour", "hi", "hi"];
+let arrayTestUnique = ['hello', 'hi', 'bonjour', 'hi', 'hi'];
 function checkUniqueItem(array) {
   for (i = 0; i < array.length; i++)
     if (array.includes(array[i], i + 1))
       return `array contains duplicates: ${array[i]}`;
-  return "no duplicates to be found";
+  return 'no duplicates to be found';
 }
 console.log(checkUniqueItem(arrayTestUnique));
 
@@ -677,13 +677,13 @@ console.log(sevenRandomNumbers());
 
 // OBJECTS EXERCISES
 
-console.log("objects exercises:");
+console.log('objects exercises:');
 
 // 1
 
 let personAccount = {
-  firstName: "adrien",
-  lastName: "fernandez",
+  firstName: 'adrien',
+  lastName: 'fernandez',
   incomes: { kela: 580, work: 350, france: 490 },
   expenses: { rent: 600, transport: 50, food: 120 },
   // totalIncomes: function(incomes) {
@@ -721,18 +721,18 @@ let personAccount = {
 };
 
 console.log(personAccount);
-console.log("your incomes", personAccount.totalIncomes());
-console.log("your expenses", personAccount.totalExpenses());
-console.log("your account balance", personAccount.accountBalance());
-console.log("new income", personAccount.addIncome("other", 400));
-console.log("updated incomes", personAccount.totalIncomes());
-console.log("new expense", personAccount.addExpense("other", 200));
+console.log('your incomes', personAccount.totalIncomes());
+console.log('your expenses', personAccount.totalExpenses());
+console.log('your account balance', personAccount.accountBalance());
+console.log('new income', personAccount.addIncome('other', 400));
+console.log('updated incomes', personAccount.totalIncomes());
+console.log('new expense', personAccount.addExpense('other', 200));
 
-console.log("personAccountV2");
+console.log('personAccountV2');
 
 let personAccountTwo = {
-  firstName: "adrien",
-  lastName: "fernandez",
+  firstName: 'adrien',
+  lastName: 'fernandez',
   incomes: [{ kela: 580 }, { work: 350 }, { france: 490 }],
   expenses: [{ rent: 600 }, { transport: 50 }, { food: 120 }],
   totalIncomes: function() {
@@ -756,13 +756,13 @@ let personAccountTwo = {
     let newIncome = {};
     newIncome[nameIncome] = numIncome;
     this.incomes.push(newIncome);
-    return "add income: " + nameIncome + " " + numIncome;
+    return 'add income: ' + nameIncome + ' ' + numIncome;
   },
   addExpense: function(nameExpense, numExpense) {
     let newExpense = {};
     newExpense[nameExpense] = numExpense;
     this.expenses.push(newExpense);
-    return "add income: " + nameExpense + " " + numExpense;
+    return 'add income: ' + nameExpense + ' ' + numExpense;
   }
 };
 
@@ -770,7 +770,24 @@ console.log(personAccountTwo);
 console.log(personAccountTwo.totalIncomes());
 console.log(personAccountTwo.totalExpenses());
 console.log(personAccountTwo.accountBalance());
-console.log(personAccountTwo.addIncome("other", 200));
-console.log(personAccountTwo.addIncome("extra", 100));
-console.log(personAccountTwo.addExpense("other", 150));
+console.log(personAccountTwo.addIncome('other', 200));
+console.log(personAccountTwo.addIncome('extra', 100));
+console.log(personAccountTwo.addExpense('other', 150));
 console.log(personAccountTwo.totalExpenses());
+
+const nums = [1, 2, 3, 4, 5];
+const squareNums = nums.map(num => {
+  return num * num;
+});
+console.log(squareNums);
+
+const countries = ['iceland', 'finland', 'sweden', 'norway', 'netherland'];
+const landCountries = countries.filter(country => {
+  if (country.includes('land')) return country;
+});
+console.log(landCountries);
+
+const sixCharCountries = countries.filter(country => {
+  if (country.length == 6) return country;
+});
+console.log(sixCharCountries);
