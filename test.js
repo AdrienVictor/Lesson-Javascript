@@ -54,6 +54,7 @@ function agesGreaterEighteen(array) {
 const ageChecker = ages.filter(age => {
   return age > 18;
 });
+console.log(ageChecker);
 
 console.log(agesGreaterEighteen(ages));
 

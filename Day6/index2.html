@@ -1,0 +1,31 @@
+<!-- Getting element and elements:using get -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document Object Model</title>
+  </head>
+
+  <body>
+    <h1 class="title" id="first-title">First Title</h1>
+    <h1 class="title">Second Title</h1>
+    <h1 class="title">Third Title</h1>
+    <h1></h1>
+    <script>
+      const firstTitle = document.getElementById('first-title');
+      console.log(firstTitle);
+      console.log(firstTitle.textContent);
+      const titles = document.getElementsByTagName('h1');
+      console.log(titles);
+      console.log(titles.length);
+      for (let i = 0; i < titles.length; i++) {
+        console.log(titles[i]);
+        console.log(titles[i].textContent);
+      }
+      const allTitles = document.getElementsByClassName('title');
+      console.log(allTitles);
+    </script>
+  </body>
+</html>

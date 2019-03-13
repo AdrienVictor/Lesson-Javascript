@@ -1,0 +1,57 @@
+<!-- Setting Attributes using setAttribute and using DOM object property -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document Object Model</title>
+    <style>
+      .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 90%;
+        margin: auto;
+      }
+
+      .wrapper > div {
+        width: 150px;
+        height: 150px;
+        margin: 3px;
+        border-radius: 8px;
+        text-align: center;
+        line-height: 150px;
+        font-size: 32px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>First Title</h1>
+    <img />
+    <a href="https://sabe.io/">Link</a>
+
+    <script>
+      // Setting Attributes
+      const firstTitle = document.querySelector('h1');
+      console.log(firstTitle);
+      firstTitle.id = 'first-title';
+      console.log(firstTitle);
+      firstTitle.className = 'title';
+      console.log(firstTitle);
+      firstTitle.setAttribute('id', 'first-title');
+      firstTitle.setAttribute('class', 'title');
+      console.log(firstTitle);
+      const img = document.querySelector('img');
+      img.src =
+        'https://www.catster.com/wp-content/uploads/2018/07/Savannah-cat-long-body-shot.jpg';
+
+      const link = document.querySelector('a');
+      link.href = 'https://www.w3schools.com/';
+      link.setAttribute('hreft', 'https://www.w3schools.com/');
+      firstTitle.classList.add('first-class', 'second-class');
+      console.log(firstTitle);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+<!-- Creating HTML element -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document Object Model</title>
+    <style>
+      .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 90%;
+        margin: auto;
+      }
+
+      .wrapper > div {
+        width: 150px;
+        height: 150px;
+        margin: 3px;
+        border-radius: 8px;
+        text-align: center;
+        line-height: 150px;
+        font-size: 32px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper"></div>
+    <script>
+      // Creating HTML elements
+      const firstTitle = document.createElement('h1');
+      firstTitle.textContent = 'First Title';
+      firstTitle.setAttribute('id', 'first-title');
+
+      const secondTitle = document.createElement('h1');
+      secondTitle.textContent = 'Second Title';
+      secondTitle.setAttribute('id', 'second-title');
+      const thirdTitle = document.createElement('h1');
+      thirdTitle.textContent = 'Third Title';
+      thirdTitle.setAttribute('id', 'third-title');
+      document.body.appendChild(firstTitle);
+      document.body.appendChild(secondTitle);
+      document.body.appendChild(thirdTitle);
+
+      const contents = ['First Title', 'Second Title', 'Third Title'];
+      let title;
+      for (let i = 0; i < 3; i++) {
+        title = document.createElement('h1');
+        title.textContent = contents[i];
+        if (i % 2 == 0) {
+          title.style.color = 'green';
+        } else {
+          title.style.color = 'red';
+        }
+        document.body.appendChild(title);
+      }
+      const wrapper = document.querySelector('.wrapper');
+      let box;
+      for (let i = 0; i < 101; i++) {
+        box = document.createElement('div');
+        box.textContent = i;
+        if (i % 2 === 0) {
+          box.style.backgroundColor = 'lightgreen';
+        } else {
+          box.style.backgroundColor = 'lightblue';
+        }
+
+        wrapper.appendChild(box);
+      }
+    </script>
+  </body>
+</html>

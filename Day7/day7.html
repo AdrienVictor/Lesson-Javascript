@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document Object Model</title>
+    <style></style>
+  </head>
+
+  <body>
+    <input type="text" placeholder="Task" autofocus />
+    <button id="add-button">Add Todo</button>
+    <div class="todos-wrapper"></div>
+    <script>
+      const todos = ['Task 1', 'Task 2', 'Task 3', 'Task 4'];
+      const todosWrapper = document.querySelector('.todos-wrapper');
+      const addButton = document.querySelector('#add-button');
+      const input = document.querySelector('input');
+
+      const showTodos = () => {
+        todos.forEach((task, i) => {
+          let todo = document.createElement('li');
+          todo.textContent = task;
+
+          let deleteButton = document.createElement('button');
+          deleteButton.textContent = 'Delete';
+          let editButton = document.createElement('button');
+          editButton.textContent = 'Edit';
+
+          todo.appendChild(editButton);
+
+          deleteButton.addEventListener('click', function() {
+            deleteTodo(i);
+          });
+          todo.appendChild(deleteButton);
+
+          todosWrapper.appendChild(todo);
+        });
+      };
+
+      const addTodo = todo => {
+        todos.push(todo);
+        showTodos();
+      };
+      const deleteTodo = index => {
+        todosWrapper.innerHTML = '';
+        todos.splice(index, 1);
+        showTodos();
+      };
+      const editTodo = (index, newTodo) => {
+        todos[index] = newTodo;
+        showTodos();
+      };
+      addButton.addEventListener('click', () => {
+        todosWrapper.innerHTML = '';
+        addTodo(input.value);
+        input.value = '';
+      });
+      showTodos();
+    </script>
+  </body>
+</html>
+<!DOCTYPE html>

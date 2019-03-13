@@ -1,0 +1,55 @@
+<!-- Getting element and elements:using query -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document Object Model</title>
+  </head>
+
+  <body>
+    <h1 class="title" id="first-title">First Title</h1>
+    <h1 class="title">Second Title</h1>
+    <h1 class="title">Third Title</h1>
+    <h1></h1>
+
+    <script>
+      const skills = {
+        html: 9,
+        css: 8,
+        js: 8
+      };
+      const firstTitle = document.querySelector('#first-title');
+      const titles = document.querySelectorAll('h1');
+      console.log(firstTitle);
+      console.log(titles);
+      for (let i = 0; i < titles.length; i++) {
+        console.log(titles[i]);
+      }
+      titles.forEach((element, index) => {
+        element.style.fontSize = '44px';
+        if (index % 2 === 0) {
+          element.textContent = 'Event Titles';
+          element.style.color = 'green';
+        } else {
+          element.textContent = 'Odd Titles';
+          element.style.color = 'red';
+        }
+        console.log(index + 1, element);
+      });
+      const allTitles = document.querySelector('.title');
+      console.log(allTitles);
+      //textContent, innerHTML, style;
+      const h2 = document.querySelector('h2');
+      console.log(h2);
+      console.log(h2.textContent);
+      console.log(h2.innerHTML);
+      h2.innerHTML = `<ul>
+                <li>HTML:${skills.html}</li>
+                <li>CSS:${skills.css}</li>
+                <li>JavaScript:${skills.js}</li>
+            </ul>`;
+    </script>
+  </body>
+</html>
