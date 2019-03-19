@@ -16,7 +16,6 @@
   text-align: center;
   box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  /* background-color: #ffffff26; */
 
   backdrop-filter: blur(5px);
   padding: 20px;
@@ -35,12 +34,12 @@
   );
   background-size: 1800% 1800%;
 
-  animation: rainbow 18s ease infinite;
+  animation: rainbow 15s ease infinite;
 }
 input {
-  width: 300px;
+  width: 250px;
   height: 35px;
-  margin: 10px;
+  margin: 30px;
   font-size: 1.5rem;
   text-align: center;
 }
@@ -48,7 +47,9 @@ button {
   width: 100px;
   height: 35px;
   font-size: 1.5rem;
+  background: whitesmoke;
 }
+
 h1 {
   font-size: 3rem;
 }
@@ -61,7 +62,7 @@ p {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  /* align-items: center; */
+  align-items: center;
 }
 .random-color {
   display: flex;
@@ -72,20 +73,43 @@ p {
   margin: 5px;
   box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-
-  background-color: #ffffff26;
-
-  backdrop-filter: blur(5px);
 }
 
 .random-color > b {
   display: none;
 }
+/* reseting the default button style */
 .copy-button {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  outline: 0;
+  -webkit-appearance: none;
+}
+/* making the custom button style */
+.copy-button {
+  top: 0;
+  position: relative;
   /* margin-top: 10%; */
+  background: transparent;
   width: 50px;
   border-radius: 5px;
   border: none;
+  border-bottom: 1px solid #fffff0;
+  transform: translateZ(0);
+  transition: all 0.2s ease;
+}
+.copy-button:hover {
+  background: ivory;
+  top: -10px;
+  box-shadow: 0px 10px 10px rgba(255, 255, 240, 0.2);
+  transform: rotateX(20deg);
+}
+.copy-button:active {
+  top: 0px;
+  box-shadow: 0px 0px 0px rgba(15, 165, 60, 0);
+  background: rgba(20, 224, 133, 1);
 }
 
 @keyframes rainbow {
