@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Destructuring</title>
+  </head>
+
+  <body>
+    <h2>Hexadecimal Generator</h2>
+    <input type="text" placeholder="Enter number" />
+    <button>Generator</button>
+    <div class="wrapper"></div>
+
+    <script>
+      const rgbGenerator = () => {
+        let red = Math.floor(Math.random() * 256);
+        let green = Math.floor(Math.random() * 256);
+        let blue = Math.floor(Math.random() * 256);
+        return `rgb(${red},${green},${blue})`;
+      };
+      console.log(rgbGenerator());
+      const wrapper = document.querySelector('.wrapper');
+
+      for (let i = 0; i < 5; i++) {
+        let color = rgbGenerator();
+        let box = document.createElement('div');
+        box.textContent = color;
+        box.style.backgroundColor = color;
+        wrapper.appendChild(box);
+      }
+    </script>
+  </body>
+</html>
