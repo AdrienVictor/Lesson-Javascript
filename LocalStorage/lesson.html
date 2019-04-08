@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>localStorage Lesson: 3.4.2019</title>
+  </head>
+  <body>
+    <h1>localStorage lesson: check the console!</h1>
+    <script>
+      const product = [
+        {
+          name: 'laptop',
+          model: 'lenovo',
+          price: 700,
+          year: 2019,
+          periphericals: ['keyboard', 'mouse', 'headset', 'monitor']
+        }
+      ];
+      let productJson = JSON.stringify(product, undefined, 2);
+      console.log(productJson);
+
+      localStorage.setItem('product', productJson);
+      console.log(localStorage.getItem('product'));
+
+      let productParsed = JSON.parse(localStorage.getItem('product'));
+      console.log(productParsed);
+    </script>
+  </body>
+</html>

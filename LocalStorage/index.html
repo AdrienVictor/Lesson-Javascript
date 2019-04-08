@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Income Statement</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Courier New', Courier, monospace;
+      }
+      body {
+        background-color: #6441a4;
+      }
+      .income-statement {
+        width: 75%;
+        min-height: 100vh;
+
+        margin: auto;
+        /* border: 3px solid black; */
+      }
+      h1 {
+        text-align: center;
+        padding: 15px;
+      }
+      h2 {
+        margin-bottom: 10px;
+        text-align: center;
+        text-decoration: underline;
+      }
+      .inputs {
+        /* display: flex; */
+        /* justify-content: space-between; */
+        margin: 15px auto;
+        width: 90%;
+      }
+      form {
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      .inputs input,
+      select,
+      button {
+        margin: 10px;
+        padding: 10px;
+        text-align: center;
+        border: 2px solid black;
+        box-shadow: 5px 5px 0 0 #000;
+      }
+      button {
+        background: rgb(56, 56, 56);
+        color: white;
+        /* box-shadow: 5px 5px 0 0 #ffffff; */
+      }
+      button:hover {
+        font-weight: bold;
+        background: green;
+        transform: scale(1.2);
+        transition: 0.3s;
+        box-shadow: 2px 2px 0 0 #000;
+      }
+      .reset-btn:hover {
+        background: red;
+      }
+      .statements {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+      }
+      .incomes:hover,
+      .expenses:hover,
+      .balance:hover {
+        transform: scale(0.96);
+        transition: 0.3s;
+        box-shadow: 5px 5px 0 0 #000;
+      }
+      .incomes,
+      .expenses {
+        min-width: 350px;
+        min-height: 300px;
+        margin: 10px auto;
+        background-color: ivory;
+        border: 2px solid black;
+        box-shadow: 10px 10px 0 0 #000;
+      }
+      li {
+        margin-left: 10px;
+        list-style-type: square;
+      }
+      .balance {
+        width: 90%;
+        margin: 20px;
+        text-align: center;
+        background-color: ivory;
+        border: 2px solid black;
+        box-shadow: 10px 10px 0 0 #000;
+      }
+      .balance p {
+        padding: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="income-statement">
+      <h1>Income Statement</h1>
+      <div class="inputs">
+        <form action="">
+          <input
+            type="text"
+            class="description"
+            placeholder="Enter Description"
+            required
+          />
+          <input
+            type="number"
+            class="amount"
+            placeholder="Enter Amount"
+            required
+          />
+          <select class="input-type">
+            <option value="Income">Income</option>
+            <option value="Expense">Expense</option>
+          </select>
+          <button type="submit">Add</button>
+          <button class="reset-btn" type="button">Reset</button>
+        </form>
+      </div>
+      <div class="statements">
+        <div class="incomes">
+          <h2>Incomes</h2>
+          <div class="items items-income"></div>
+        </div>
+        <div class="expenses">
+          <h2>Expenses</h2>
+          <div class="items items-expense"></div>
+        </div>
+        <div class="balance">
+          <h2>Balance</h2>
+          <p class="balance-para">hello</p>
+        </div>
+      </div>
+    </div>
+    <script>
+      let account = {
+        name: 'Adrien Fernandez',
+        expenses: [],
+        incomes: []
+      };
+      let storedAccount;
+      //   let stroredAccount= JSON.parse(localStorage.getItem('account'));
+
+      const inputDescription = document.querySelector('.description');
+      const inputAmount = document.querySelector('.amount');
+      const inputType = document.querySelector('.input-type');
+      const form = document.querySelector('form');
+      const resetBtn = document.querySelector('.reset-btn');
+      const itemsIncome = document.querySelector('.items-income');
+      const itemExpense = document.querySelector('.items-expense');
+      const balancePara = document.querySelector('.balance-para');
+
+      function addIncome() {
+        let newIncome = {
+          description: inputDescription.value,
+          amount: inputAmount.value,
+          date: setDate()
+        };
+        account.incomes.push(newIncome);
+      }
+      function addExpense() {
+        let newExpense = {
+          description: inputDescription.value,
+          amount: inputAmount.value,
+          date: setDate()
+        };
+        account.expenses.push(newExpense);
+      }
+
+      function setDate() {
+        let now = new Date();
+
+        let date = now.getDate();
+        let month = now.getMonth() + 1;
+        let year = now.getFullYear();
+        let hour = now.getHours();
+        let minute = now.getMinutes();
+
+        if (hour < 10) {
+          hour = '0' + hour;
+        }
+        if (minute < 10) {
+          minute = '0' + minute;
+        }
+        let formatDate = `${date}.${month}.${year} ${hour}:${minute}`;
+        return formatDate;
+      }
+
+      function displayInput() {
+        if (inputType.value == 'Income') {
+          addIncome();
+          let content = `${inputDescription.value} <b>${
+            inputAmount.value
+          }</b> ${setDate()}`;
+          newIncome = document.createElement('li');
+          newIncome.classList.add = 'income';
+          newIncome.innerHTML = content;
+          itemsIncome.appendChild(newIncome);
+        }
+        if (inputType.value == 'Expense') {
+          addExpense();
+          let content = `${inputDescription.value} <b>${
+            inputAmount.value
+          }</b> ${setDate()}`;
+          newExpense = document.createElement('li');
+          newExpense.classList.add = 'Expense';
+          newExpense.innerHTML = content;
+          itemExpense.appendChild(newExpense);
+        }
+        let accountJSON = JSON.stringify(account, undefined, 2);
+        localStorage.setItem('account', accountJSON);
+      }
+
+      function getData() {
+        let storedAccount = JSON.parse(localStorage.getItem('account'));
+        if (storedAccount) {
+          return storedAccount;
+        } else return account;
+      }
+      function displayAccount() {
+        account = getData();
+        account.incomes.forEach(income => {
+          storedIncome = document.createElement('li');
+          content = `${income.description} ${income.amount} ${income.date}`;
+          storedIncome.innerHTML = content;
+          itemsIncome.appendChild(storedIncome);
+        });
+        account.expenses.forEach(expense => {
+          storedExpense = document.createElement('li');
+          content = `${expense.description} ${expense.amount} ${expense.date}`;
+          storedExpense.innerHTML = content;
+          itemExpense.appendChild(storedExpense);
+        });
+        // }
+      }
+      function countBalance() {
+        let totalExpenses = account.expenses.reduce(
+          (a, b) => a + Number(b.amount),
+          0
+        );
+        let totalIncome = account.incomes.reduce(
+          (a, b) => a + Number(b.amount),
+          0
+        );
+        return totalIncome - totalExpenses;
+      }
+
+      function displayBalance() {
+        balancePara.innerHTML = '';
+        content = `This account is for ${
+          account.name
+        }. The account balance is: <span>${countBalance()}€</span>`;
+        balancePara.innerHTML = content;
+      }
+      displayAccount();
+      displayBalance();
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        displayInput();
+        displayBalance();
+      });
+      resetBtn.addEventListener('click', function() {
+        localStorage.clear();
+        let items = document.querySelectorAll('.items');
+        items.forEach(item => (item.innerHTML = ''));
+        displayBalance();
+      });
+    </script>
+  </body>
+</html>
