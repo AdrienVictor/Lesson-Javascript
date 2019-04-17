@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Lesson 16.4.2019: class</title>
+  </head>
+  <body>
+    <h1>JS classes, prototypes, regEx - 16/4/2019: console.log</h1>
+    <script>
+      // ****** classes *******
+
+      // class Animals {
+      //   constructor(name, color, breed) {
+      //     this.name = name;
+      //     this.color = color;
+      //     this.breed = breed;
+      //   }
+      //   static getAnySkill() {
+      //     const skills = ['jump', 'run', 'hunt'];
+      //     const index = Math.floor(Math.random() * 3);
+      //     const skill = skills[index];
+      //     return `I can ${skill}`;
+      //   }
+      //   get getName() {
+      //     return this.name;
+      //   }
+      //   set setName(name) {
+      //     this.name;
+      //   }
+      //   getanimalInfo() {
+      //     return `I am ${this.name}, I am ${this.color}`;
+      //   }
+      // }
+
+      // const dog = new animal('puppy', 'black', 'labrador');
+      // const cat = new animal('kitty', 'white', 'abysian');
+      // const lion = new animal('simba', 'brown', 'indian');
+      // console.log(dog, cat, lion);
+      // console.log(dog.getanimalInfo());
+
+      // const name = new String('adrien');
+      // console.log(name);
+      // const arr = Array(3).fill(7);
+      // console.log(arr);
+      // console.log(animal.getAnySkill());
+
+      // class Cat extends Animals {
+      //   constructor(name, color, breed, cleanLitter) {
+      //     super(name, color, breed);
+      //     this.cleanLitter = cleanLitter;
+      //   }
+
+      //   sayMeow() {
+      //     return 'meow';
+      //   }
+      //   cleanMyLitter() {
+      //     return `I am ${this.name} and I ${this.cleanLitter}.`;
+      //   }
+      // }
+      // const cat = new Cat('kitty', 'white', 'abysian', 'know how to clean');
+      // console.log(cat.sayMeow());
+      // console.log(cat.cleanMyLitter());
+
+      // **** prototypes *****
+
+      function Animal(name, color, breed) {
+        this.name = name;
+        this.color = color;
+        this.breed = breed;
+        this.getAnimalInfo = () => {
+          return `I am ${this.name} and I am ${this.breed}.`;
+        };
+      }
+      Animal.prototype.getColor = function() {
+        return this.color;
+      };
+      const cat = new Animal('kitty', 'white', 'abysinian');
+      console.log(cat);
+      const dog = new Animal('fluffy', 'black', 'labrador');
+      console.log(dog.getColor());
+    </script>
+  </body>
+</html>
