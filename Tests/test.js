@@ -59,19 +59,10 @@ console.log(ageChecker);
 console.log(agesGreaterEighteen(ages));
 
 // question4
-let itCompanies = [
-  'Facebook',
-  'Google',
-  'Microsoft',
-  'Apple',
-  'IBM',
-  'Oracle',
-  'Amazon'
-];
+let itCompanies = ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon'];
 
 function removeMiddleAddNew(array, newOne, newTwo) {
-  if (array.length % 2 != 0)
-    array.splice(Math.floor(array.length / 2), 1, newOne);
+  if (array.length % 2 != 0) array.splice(Math.floor(array.length / 2), 1, newOne, newTwo);
   else array.splice(Math.floor(array.length / 2), 2, newOne, newTwo);
 
   return array;
@@ -87,8 +78,7 @@ function averageAge(array) {
   let sumInterger = sum.toFixed();
   let i = array.length;
   while (i--)
-    if (typeof array[i] === 'string')
-      return 'your array must only contain numbers';
+    if (typeof array[i] === 'string') return 'your array must only contain numbers';
     else return `the avarage of the class is ${sumInterger} years old`;
 }
 console.log(averageAge(ages));
@@ -154,8 +144,7 @@ const arrTwo = [1, 4, 6, 2, 3];
 
 function checkUniqueItem(array) {
   for (i = 0; i < array.length; i++)
-    if (array.includes(array[i], i + 1))
-      return `array contains duplicates: ${array[i]}`;
+    if (array.includes(array[i], i + 1)) return `array contains duplicates: ${array[i]}`;
   return 'no duplicates to be found';
 }
 console.log(checkUniqueItem(arrOne));
@@ -211,8 +200,7 @@ const users = [
 function scoresGreaterThan85(array) {
   // return users.filter(userItem => userItem.scores > 85);
   let newArray = [];
-  for (i = 0; i < array.length; i++)
-    if (users[i].scores > 85) newArray.push(users[i]);
+  for (i = 0; i < array.length; i++) if (users[i].scores > 85) newArray.push(users[i]);
   return newArray;
 }
 console.log(scoresGreaterThan85(users));
@@ -260,9 +248,7 @@ console.log(users);
 // EXTRAS
 // generate random date between a starting and an ending date
 function randomDate(start, end) {
-  let date = new Date(
-    start.getTime() + Math.random() * (end.getTime() - start.getTime())
-  );
+  let date = new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
   console.log(date);
 
   return date
