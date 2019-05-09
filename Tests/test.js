@@ -67,7 +67,7 @@ function removeMiddleAddNew(array, newOne, newTwo) {
 
   return array;
 }
-console.log(removeMiddleAddNew(itCompanies, 'Integrify', 'Smartly'));
+console.log(removeMiddleAddNew(ages, 'Integrify', 'Smartly'));
 
 // question5
 function averageAge(array) {
@@ -136,7 +136,7 @@ function removeProduct(array, indexNum) {
   }
   return newArray;
 }
-console.log(removeProduct(shoppingCart, 3));
+console.log(removeProduct(shoppingCart, 2));
 
 // question10
 const arrOne = [1, 4, 6, 2, 1];

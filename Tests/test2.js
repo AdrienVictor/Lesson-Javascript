@@ -27,3 +27,116 @@ while (j < 100) {
   console.log(j);
 }
 console.log(test.length);
+
+// *** question 3: Maximum Math.max returns its largest argument. We can build something like that now. Write a function findMax that takes three arguments and returns their maxiumum. Without method Math.max method.
+
+const findMax = (a, b, c) => {
+  if (a > b && a > c) return a;
+  if (b > a && b > c) return b;
+  if (c > a && c > b) return c;
+};
+console.log(findMax(0, -10, -5));
+
+// *** question 4: Reversing an array Arrays have a reverse method which changes the array by inverting the order in which its elements appear. For this exercise, write a function, reverseArray. The reverseArray, takes an array as argument and produces a new array that has the same elements in the inverse order. Without reverse method.
+
+const reverseArray = arr => {
+  let newArray = [];
+  for (let i = arr.length - 1; i >= 0; i--) {
+    newArray.push(arr[i]);
+  }
+  return newArray;
+};
+console.log(reverseArray(['a', 'b', 'c', 'd']));
+
+// *** question 5: Modifying an array Write a function called modifyArray takes array as parameter and modifies the fifth item of the array and returns the array. If the array length is less than five it return ‘item not found’.
+
+const modifyArray = arr => {
+  if (arr.length < 5) return 'item not found';
+  else {
+    let index = arr[4].toUpperCase();
+    arr.splice(4, 1, index);
+  }
+
+  return arr;
+};
+console.log(modifyArray(['Google', 'Facebook', 'Apple', 'Amazon', 'Integrify']));
+
+// *** question 6: Write a function which returns array of seven random numbers in a range of 0-9. All the numbers must be unique
+
+const sevenRandomNumbers = () => {
+  let arr = [];
+  while (arr.length < 7) {
+    var r = Math.floor(Math.random() * 10);
+    if (arr.indexOf(r) === -1) arr.push(r);
+  }
+  return arr;
+};
+console.log(sevenRandomNumbers());
+
+// *** question 7: Write a funch which takes any number of arguments and return the sum of the arguments
+
+function sum() {
+  let sum = 0;
+  for (let i = 0; i < arguments.length; i++) {
+    sum += arguments[i];
+  }
+  return sum;
+}
+console.log(sum(1, 2, 3, 10));
+
+// *** question 8: Write a function which removes items from the middle of an array and replace with three items.
+
+const removeMiddleAddthree = (array, itemOne, itemTwo, itemThree) => {
+  if (array.length % 2 != 0)
+    array.splice(Math.floor(array.length / 2), 1, itemOne, itemTwo, itemThree);
+  else array.splice(Math.floor(array.length / 2), 2, itemOne, itemTwo, itemThree);
+
+  return array;
+};
+console.log(removeMiddleAddthree([1, 2, 3, 4], 4, 5, 6));
+
+// question 9: Calculate the total annual income of the person by extracting the following text. 'He earns 5000 euro from salary per month, 10000 euro annual bonus, 15000 euro online courses per month.'
+
+let text =
+  'He earns 5000 euro from salary per month, 10000 euro annual bonus, 15000 euro online courses per month.';
+
+// method1:
+
+const amountCheck = () => {
+  let amounts = [];
+  let arr = text.split(' ');
+  console.log(arr);
+  for (let i = 0; i < arr.length; i++) {
+    console.log(isNaN(arr[i]));
+    if (!isNaN(arr[i])) {
+      amounts.push(Number(arr[i]));
+    }
+  }
+  let salary = amounts[0] * 12;
+  let bonus = amounts[1];
+  let courses = amounts[2] * 12;
+
+  console.log(salary + bonus + courses);
+  return salary + bonus + courses;
+};
+console.log(amountCheck());
+
+// method 2:
+
+let incomeNumbers = text.match(/\d+/g);
+console.log(incomeNumbers);
+
+let salary = 12 * +incomeNumbers[0];
+let bonus = +incomeNumbers[1];
+let courses = 12 * +incomeNumbers[2];
+
+let income = salary + bonus + courses;
+console.log(income);
+
+// question 10: Create a function that takes two strings and returns true if the first argument ends with the second argument; otherewise return false . Take two strings as arguments. Determine if second string matches ending of first string. Return boolean value.
+
+const matchFunc = (string1, string2) => {
+  let ending = string1.slice(-string2.length);
+  return ending == string2 ? true : false;
+};
+console.log(matchFunc('integrity', 'ity'));

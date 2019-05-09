@@ -159,15 +159,7 @@ console.log(a > b ? 'a is greater than b' : 'b i greater than a');
 var question10 = 'question10';
 console.log(question10);
 
-let itCompanies = [
-  'Facebook',
-  'Google',
-  'Microsoft',
-  'Apple',
-  'IBM',
-  'Oracle',
-  'Amazon'
-];
+let itCompanies = ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon'];
 console.log(itCompanies);
 console.log(itCompanies.length);
 for (var i = 0; i < itCompanies.length; i++) {
@@ -179,9 +171,7 @@ for (var i = 0; i < itCompanies.length; i++) {
 
 // use itcompanie.slice(itcompanies.length-1)
 console.log(
-  `${itCompanies.slice(0, itCompanies.length - 1)} and ${
-    itCompanies[6]
-  } are big IT companies`
+  `${itCompanies.slice(0, itCompanies.length - 1)} and ${itCompanies[6]} are big IT companies`
 );
 
 console.log(itCompanies.sort());
@@ -193,9 +183,7 @@ function findCompany(companyName) {
 
 itCompanies.find(findCompany)
   ? console.log(`${itCompanies.find(findCompany)} exists in the array`)
-  : console.log(
-      `${itCompanies.find(findCompany)} does not exists in the array`
-    );
+  : console.log(`${itCompanies.find(findCompany)} does not exists in the array`);
 
 // ASABENEH METHOD -- 19.2
 
@@ -273,9 +261,7 @@ companyName == itCompanies[i]
 //   if (itCompanies[i].indexOf("oo") != -1) console.log(itCompanies[i]);
 // }
 for (let i = 0; i < itCompanies.length; i++) {
-  itCompanies[i].indexOf('oo') != -1
-    ? console.log(itCompanies[i])
-    : console.log('not found');
+  itCompanies[i].indexOf('oo') != -1 ? console.log(itCompanies[i]) : console.log('not found');
 }
 
 // EXERCISES: FUNCTIONS
@@ -621,8 +607,7 @@ function sumOfArrayItems(array) {
   }, 0);
   let i = array.length;
   while (i--)
-    if (typeof array[i] === 'string')
-      return 'your array must only contain numbers';
+    if (typeof array[i] === 'string') return 'your array must only contain numbers';
     else return sum;
 }
 console.log(sumOfArrayItems([3, 5, 6, 4 * 6, 10 / 2, 'hello']));
@@ -636,8 +621,7 @@ function average(array) {
     }, 0) / array.length;
   let i = array.length;
   while (i--)
-    if (typeof array[i] === 'string')
-      return 'your array must only contain numbers';
+    if (typeof array[i] === 'string') return 'your array must only contain numbers';
     else return `the avarage of your array is ${sum}`;
 }
 console.log(average([19, 34, 10 + 3, 9 * 3, 23 / 4]));
@@ -657,8 +641,7 @@ console.log(modifyArray(itCompanies));
 let arrayTestUnique = ['hello', 'hi', 'bonjour', 'hi', 'hi'];
 function checkUniqueItem(array) {
   for (i = 0; i < array.length; i++)
-    if (array.includes(array[i], i + 1))
-      return `array contains duplicates: ${array[i]}`;
+    if (array.includes(array[i], i + 1)) return `array contains duplicates: ${array[i]}`;
   return 'no duplicates to be found';
 }
 console.log(checkUniqueItem(arrayTestUnique));
