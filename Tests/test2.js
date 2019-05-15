@@ -66,7 +66,7 @@ console.log(modifyArray(['Google', 'Facebook', 'Apple', 'Amazon', 'Integrify']))
 const sevenRandomNumbers = () => {
   let arr = [];
   while (arr.length < 7) {
-    var r = Math.floor(Math.random() * 10);
+    let r = Math.floor(Math.random() * 10);
     if (arr.indexOf(r) === -1) arr.push(r);
   }
   return arr;

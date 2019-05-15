@@ -167,14 +167,15 @@ const removeTask = taskName => {
 };
 console.log(removeTask('Prepare JS Test'));
 
-const editTask = (taskName, newName) => {
+const editTask = (taskName, newName, status) => {
   let newTodo = todoList.slice();
   for (let i = 0; i < newTodo.length; i++) {
     newTodo[i].task == taskName ? (newTodo[i].task = newName) : '';
+    newTodo[i].completed = status;
   }
   return newTodo;
 };
-console.log(editTask('Sprint Retrospective', 'edit task'));
+console.log(editTask('Sprint Retrospective', 'edit task', false));
 
 // *** questionn 10: Write a function which check if items of an array are unique?
 const arrOne = [1, 4, 6, 2, 1];

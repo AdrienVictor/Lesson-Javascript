@@ -776,3 +776,61 @@ const sixCharCountries = countries.filter(country => {
 console.log(sixCharCountries);
 
 const points = [1, 2, 3, 4, 5, 6];
+
+// *** check if a number is a prime number
+
+let arr = [0, 1, 2, 3, 4, 5, 6, 7.5, 8, 8, 9, 10, 11, 12, 13, 14, 15, 16];
+
+const primeNums = array => {
+  let primes = [];
+
+  function isPrime(num) {
+    if (num <= 1 || Number.isInteger(num) === false) {
+      return false;
+    } else if (num === 2) {
+      return true;
+    } else {
+      for (let i = 2; i < num; i++) {
+        if (num % i === 0) {
+          return false;
+        }
+      }
+      return true;
+    }
+  }
+
+  for (n = 0; n < array.length; n++) {
+    if (isPrime(array[n])) {
+      primes.push(array[n]);
+    }
+  }
+  return primes;
+};
+console.log(primeNums(arr));
+
+//  or using high order function: filter
+
+let numsArr = [2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+let primeArr = numsArr.filter(number => {
+  for (let i = 2; i <= Math.sqrt(number); i++) {
+    if (number % i === 0) return false;
+  }
+  return true;
+});
+
+console.log(primeArr);
+
+//  or ??
+
+for (var counter = 0; counter <= 100; counter++) {
+  var notPrime = false;
+  for (var i = 2; i <= counter; i++) {
+    if (counter % i === 0 && i !== counter) {
+      notPrime = true;
+    }
+  }
+  if (notPrime === false) {
+    console.log(counter);
+  }
+}
