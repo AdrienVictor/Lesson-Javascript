@@ -338,17 +338,19 @@ console.log(solvLinEquation(5, 6, 10));
 // 11
 function solvQuadEquation(a, b, c) {
   let delta = b ** 2 - 4 * a * c;
+  console.log(delta);
+
   if (delta < 0) return 'the solution does not exist';
   else if (delta === 0) {
     let result = -b / (2 * a);
     return `the solution is ${result}`;
   } else {
     let result1 = (-b + Math.sqrt(delta)) / (2 * a);
-    let result2 = -b - Math.sqrt(delta) / (2 * a);
+    let result2 = (-b - Math.sqrt(delta)) / (2 * a);
     return `there are two solutions: ${result1} and ${result2}`;
   }
 }
-console.log(solvQuadEquation(3, 40, 5));
+console.log(solvQuadEquation(2, -10, -7));
 
 // 12
 let arrayTestOne = [2, 5, 34, 'hello', 2 + 3 + 4];

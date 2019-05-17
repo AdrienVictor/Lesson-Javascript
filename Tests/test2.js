@@ -14,19 +14,23 @@ while (i--) {
 let j = 1;
 let test = [];
 while (j < 100) {
-  if (j % 3 == 0) {
-    console.log('buzz');
+  if (j % 3 == 0 && j % 5 == 0) {
+    test.push('fizzbuzz');
   }
-  if (j % 5 == 0 && j % 3 != 0) {
+  if (j % 3 == 0) {
     test.push('fizz');
     console.log('fizz');
   }
+  if (j % 5 == 0 && j % 3 != 0) {
+    test.push('buzz');
+    console.log('fizz');
+  } else test.push(j);
 
   j++;
 
   console.log(j);
 }
-console.log(test.length);
+console.log(test);
 
 // *** question 3: Maximum Math.max returns its largest argument. We can build something like that now. Write a function findMax that takes three arguments and returns their maxiumum. Without method Math.max method.
 
